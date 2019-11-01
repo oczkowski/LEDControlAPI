@@ -1,0 +1,15 @@
+{
+  "name": "led_control_api",
+  "version": "1.0.0",
+  "description": "This API allows the control of Redis data (which is read by LED controllers) and manipulating it to affect the LEDs.)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kamil Oczkowski",
+  "license": "ISC",
+  "dependencies": {
+    "redis": "^2.8.0",
+    "socket.io": "^2.3.0"
+  }
+}
