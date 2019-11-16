@@ -96,9 +96,17 @@ io.on('connection', function(socket) {
     });
     socket.on('update_room_config', async function(data) {
         if ((data.roomName, data.config)) {
+            // Get Nominal configuration
+            let config = await getAsync('CONFIG_' + data.roomName);
+            config = JSON.parse(config);
+            // We only want specific properties to be updated (This must be enforced)
             await setAsync(
                 'CONFIG_' + data.roomName,
-                JSON.stringify(data.config)
+                JSON.stringify({
+                    ...data.config,
+                    MAC_ADDRESS: config.MAC_ADDRESS,
+                    LOCAL_IP: config.LOCAL_IP
+                })
             );
         }
     });
