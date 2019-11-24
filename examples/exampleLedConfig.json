@@ -1,0 +1,9 @@
+{
+    "roomName": "bathroom",
+    "config": {
+        "LED_TYPE": "SK6812",
+        "LOCATION": "DESK",
+        "NUM_LEDS": 72,
+        "NEW": true
+    }
+}
